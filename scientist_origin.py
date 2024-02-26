@@ -23,14 +23,12 @@ with open("C:/Users/examen/Documents/scientLog/scientist.txt", "r", encoding="ut
         rs = reader[row].split("#")
         if rs[1] not in preps:
             preps[rs[1]] = rs
-            print(preps[rs[1]][2])
         if rs[1] == "Аллопуринол":
             preps[rs[1]] += [[rs[0], rs[2]]]
         elif time(rs[2], preps[rs[1]][2]):
             preps[rs[1]] = rs
         if rs[1] not in lecs:
             lecs.append(rs[1])
-    # print(preps)
 
 with open("C:/Users/examen/Documents/scientLog/scientist_origin.txt", "w", encoding="utf-8") as filew:
     filew.write("ScientistName#preparation#date#components\n")
@@ -48,3 +46,4 @@ with open("C:/Users/examen/Documents/scientLog/scientist_origin.txt", "w", encod
             for _ in gs:
                 print(f"{_[0]}-{_[1]}")
         
+
