@@ -38,12 +38,13 @@ with open("C:/Users/examen/Documents/scientLog/scientist_origin.txt", "w", encod
         else:
             gs = preps[i]
             for _ in range(0, len(gs) - 1):
-                x, y = gs[_], gs[_ + 1]
-                if not time(x[-1], y[-1]):
-                    gs[_] = y
-                    gs [_ + 1] = x 
+                for i in range(_, len(gs) - 1):
+                    x, y = gs[_], gs[i]
+                    if time(x[-1], y[-1]):
+                        gs[_] = y
+                        gs [i] = x 
             print(f"Разработчиками Аллопуринола были такие люди:")
-            for _ in gs:
+            for _ in gs[::-1]:
                 print(f"{_[0]}-{_[1]}")
         
 
