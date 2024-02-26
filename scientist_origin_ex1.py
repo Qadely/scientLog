@@ -19,7 +19,7 @@ with open("C:/Users/examen/Documents/scientLog/scientist.txt", "r", encoding="ut
     reader = file.readlines()
     preps = {"Аллопуринол": []}
     lecs = []
-    for row in range(1, len(reader) - 1):
+    for row in range(1, len(reader)):
         rs = reader[row].split("#")
         if rs[1] not in preps:
             preps[rs[1]] = rs
@@ -29,6 +29,10 @@ with open("C:/Users/examen/Documents/scientLog/scientist.txt", "r", encoding="ut
             preps[rs[1]] = rs
         if rs[1] not in lecs:
             lecs.append(rs[1])
+'''
+Поиск ученых по препаратам и внесение в preps
+включено исключение аллопуринола
+'''
 
 with open("C:/Users/examen/Documents/scientLog/scientist_origin.txt", "w", encoding="utf-8") as filew:
     filew.write("ScientistName#preparation#date#components\n")
